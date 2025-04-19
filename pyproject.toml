@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61", "wheel", "sphinx"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "file_publisher"
+version = "0.1.1"
+description = "A backend library for publishing files to a database with metadata."
+authors = [{ name = "Taiseem Dadwal" }]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "SQLAlchemy>=1.4"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "tox",
+    "sphinx"
+]

@@ -1,1 +1,14 @@
 .venv/
+.tox/
+managed_files/
+*.egg-info/
+__pycache__/
+*.pyc
+build/
+others/
+dist/
+*.egg
+*.log
+*.db
+*.sqlite3
+
