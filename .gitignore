@@ -3,6 +3,7 @@
 managed_files/
 *.egg-info/
 __pycache__/
+.pytest_cache/
 *.pyc
 build/
 others/
