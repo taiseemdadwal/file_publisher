@@ -9,7 +9,7 @@ doc:
 	@if [ ! -d docs ]; then \
 		echo "🛠️  'docs/' folder not found. Running sphinx-quickstart..."; \
 		mkdir -p docs && \
-		sphinx-quickstart -q -p $(PACKAGE) -a $(AUTHOR) --sep --makefile docs; \
+		sphinx-quickstart -q -p "$(PACKAGE)" -a "$(AUTHOR)" --sep --makefile docs; \
 	fi
 	@cd docs && make html
 	@echo "📚 Sphinx docs built successfully. Open docs/_build/html/index.html to view."
