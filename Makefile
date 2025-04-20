@@ -1,3 +1,7 @@
+PACKAGE := $(shell python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['name'])")
+VERSION := $(shell python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])")
+AUTHOR := "$(shell python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['authors'][0]['name'])")
+
 .PHONY: doc build unit test dev install clean
 
 doc:
@@ -5,7 +9,7 @@ doc:
 	@if [ ! -d docs ]; then \
 		echo "🛠️  'docs/' folder not found. Running sphinx-quickstart..."; \
 		mkdir -p docs && \
-		sphinx-quickstart -q -p "file_publisher" -a "Taiseem Dadwal" --sep --makefile docs; \
+		sphinx-quickstart -q -p $(PACKAGE) -a $(AUTHOR) --sep --makefile docs; \
 	fi
 	@cd docs && make html
 	@echo "📚 Sphinx docs built successfully. Open docs/_build/html/index.html to view."
