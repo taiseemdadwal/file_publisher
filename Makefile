@@ -1,6 +1,6 @@
 PACKAGE := $(shell python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['name'])")
 VERSION := $(shell python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])")
-AUTHOR := "$(shell python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['authors'][0]['name'])")
+AUTHOR := $(shell python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['authors'][0]['name'])")
 
 .PHONY: doc build unit test dev install clean
 
